@@ -48,6 +48,43 @@ function validateCred(array) {
     }
 }
 
+function findInvalidCards(nestedArray) {
+    let invalidCardArray = [];
+    for (array of nestedArray) {
+        if (validateCred(array) === false) {
+            invalidCardArray.push(array);
+        }
+    }
+    return invalidCardArray;
+}
+
+function idInvalidCardCompanies(nestedArray) {
+    let arrayOfCompanies = [];
+    for (array of nestedArray) {
+        switch (array[0]) {
+            case 3:
+                if (arrayOfCompanies.indexOf("American Express") === -1) {
+                arrayOfCompanies.push("American Express")};
+                break;
+            case 4:
+                if (arrayOfCompanies.indexOf("Visa") === -1) {
+                arrayOfCompanies.push("Visa")};
+                break;
+            case 5:
+                if (arrayOfCompanies.indexOf("Mastercard") === -1) {
+                arrayOfCompanies.push("Mastercard")};
+                break;
+            case 6:
+                if (arrayOfCompanies.indexOf("Discover") === -1){
+                arrayOfCompanies.push("Discover")};
+                break;
+            default:
+                console.log("Company not found")
+        }
+    }
+
+    return arrayOfCompanies;
+}
 
 
 
